@@ -60,7 +60,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="artisanship-manifesto">
+      <section id="manifesto" className="artisanship-manifesto">
         <div className="container manifesto-container">
           <h2>No Compromises.<br />Pure Ingredients.</h2>
           <p>At Lyns, we reject mass production. We offer 12 distinct, masterfully crafted soap variations. Every bar is an original masterpiece, envisioned and built entirely by our master craftsman using centuries-old techniques.</p>

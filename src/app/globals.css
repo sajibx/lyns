@@ -158,14 +158,74 @@ p {
   color: var(--color-primary);
 }
 
+.mobile-menu-btn {
+  display: block;
+  margin-left: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background: rgba(12, 10, 9, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mobile-nav-links a {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+  color: var(--color-primary);
+}
+
 /* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
   min-height: 700px;
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 6rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-bg {
@@ -235,11 +295,14 @@ p {
   overflow: hidden;
   transition: all 0.4s ease;
   backdrop-filter: blur(4px);
+  margin-top: 2rem;
 }
 
 .btn-luxury:hover {
   background: var(--color-primary);
   color: var(--color-background);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Editorial Sections */
@@ -531,4 +594,49 @@ p {
 .slide-up-delay-2 {
   opacity: 0;
   animation: slideUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.6s forwards;
+}
+
+/* Collections Page */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  /* Further reduced gap */
+  padding-bottom: 8rem;
+}
+
+@media (min-width: 600px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .collection-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .collection-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.soap-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: #14110E;
+  /* Slightly lighter dark background * 8% above main */
+  border: 1px solid var(--color-border);
+  /* Keeps the subtle outline */
+  border-radius: 4px;
+  transition: all 0.4s ease;
+}
+
+.soap-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }

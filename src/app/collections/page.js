@@ -89,14 +89,9 @@ export default function Collections() {
                     </p>
                 </div>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
-                    gap: '3rem',
-                    paddingBottom: '8rem'
-                }}>
+                <div className="collection-grid">
                     {soaps.map((soap) => (
-                        <div key={soap.id} style={{ display: 'flex', flexDirection: 'column' }}>
+                        <div key={soap.id} className="soap-card">
                             <div className="editorial-image-wrapper" style={{ marginBottom: '1.5rem' }}>
                                 <div className="editorial-image image-square">
                                     {soap.image ? (
